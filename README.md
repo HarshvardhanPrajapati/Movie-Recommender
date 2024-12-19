@@ -1,0 +1,1 @@
+Here is my first Machine Learning Project where i've tried to make a Simple ML model that recommends you good and similar movies that you should consider watching
