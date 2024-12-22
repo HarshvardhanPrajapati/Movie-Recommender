@@ -1,7 +1,16 @@
 import os
 import sys
+
 from src.exception import custom_exception
 from src.logger import logging
+from src.components.data_transformation import DataTransformatinConfig
+from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
+
+
+
 import pandas as pd
 
 
@@ -41,5 +50,10 @@ if __name__=='__main__':
     obj=DataIngestion()
     obj.initiate_data_ingestion()
 
+    data_transformation=DataTransformation()
+    transformed_data=data_transformation.get_transformer_object()
+
+    modeltrainer=ModelTrainer()
+    modeltrainer.initiate_model_training(transformed_data)
 
 

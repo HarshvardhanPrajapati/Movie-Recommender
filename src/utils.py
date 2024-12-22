@@ -1,6 +1,7 @@
 import os
 import sys
 import dill
+import pickle
 
 from src.exception import custom_exception
 
@@ -9,7 +10,7 @@ def save_object(file_path,obj):
         dir_path=os.path.dirname(file_path)
         os.makedirs(dir_path,exist_ok=True)
 
-        with open(dir_path,'wb') as file:
+        with open(file_path,'wb') as file:
             dill.dump(obj,file)
         
     except Exception as ep:

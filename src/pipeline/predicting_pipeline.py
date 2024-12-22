@@ -21,7 +21,7 @@ class PredictPipeline:
             sim=model[movie_ind]
             movies=sorted(list(enumerate(sim)),reverse=True,key=lambda x:x[1])[1:6]
 
-            recommend_movies=[df.iloc[movies[0]].title for movie in movies]
+            recommend_movies=[df.iloc[movie[0]].title for movie in movies]
             return recommend_movies
         except IndexError:
             return {"return":["Sorry, the entered movie is not present in our database.maybe try some other movie?"]}

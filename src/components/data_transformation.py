@@ -139,6 +139,8 @@ class DataTransformation:
                 obj=pipeline
             )
 
+            return transformed_df
+
             logging.info("preprocessor file saved successfully")
 
 

@@ -27,6 +27,10 @@ class ModelTrainer:
     def initiate_model_training(self,df):
         try:
             logging.info("model training begun")
+            if 'finalcol' not in df.columns:
+                raise ValueError("'finalcol' column is missing in the DataFrame")
+            if df['finalcol'].isnull().any():
+                raise ValueError("'finalcol' contains null values")
             vectors=cv.fit_transform(df['finalcol']).toarray()
             similarity_matrix=cosine_similarity(vectors)
 
