@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie recommendations</title>
+</head>
+<body>
+    <h1>movie recommendation system</h1>
+    <form id="movieform">
+        <label for="movieinput">enter the name of the movie:</label>
+        <input type="text" id="movieinput" name="movie" required>
+        <button type="submit">submit</button>
+    </form>
+
+    <div id="recommendations" style="margin-top: 20px;">
+        <h2>some movies you should watch are:</h2>
+        <ul id="movielist"></ul>
+    </div>
+
+    <script>
+        document.getElementById('movieform').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const moviename = document.getElementById('movieinput').value;
+
+            try {
+                const response = await fetch('/predictdata', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ movie: moviename })
+                });
+
+                if (!response.ok) {
+                    throw new Error('failed to fetch recommendations');
+                }
+
+                const result = await response.json();
+
+                if (result.result && result.result.length > 0) {
+                    const recommendations = result.result;
+
+                    const movielist = document.getElementById('movielist');
+                    movielist.innerHTML = ""; 
+                    recommendations.forEach(function(movie) {
+                        const listitem = document.createElement('li');
+                        listitem.textContent = movie;
+                        movielist.appendChild(listitem);
+                    });
+                } else {
+                    const movielist = document.getElementById('movielist');
+                    movielist.innerHTML = "<li>no recommendations found. try another movie.</li>";
+                }
+
+            } catch (error) {
+                console.error('error fetching recommendations:', error);
+                const movielist = document.getElementById('movielist');
+                movielist.innerHTML = "<li>error fetching recommendations. try again later.</li>";
+            }
+        });
+    </script>
+</body>
+</html>

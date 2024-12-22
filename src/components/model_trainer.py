@@ -26,6 +26,7 @@ class ModelTrainer:
     
     def initiate_model_training(self,df):
         try:
+            logging.info("model training begun")
             vectors=cv.fit_transform(df['finalcol']).toarray()
             similarity_matrix=cosine_similarity(vectors)
 
@@ -33,18 +34,11 @@ class ModelTrainer:
                 file_path=self.model_trainer_config.trained_model_path,
                 obj=cosine_similarity(vectors)
             )
-
+            
+            logging.info("pickle file of model saved successfully!!")
         except Exception as ep:
             raise(ep,sys)
                 
-
-
-
-
-
-
-
-
 
 
 
