@@ -1,0 +1,75 @@
+body {
+    background-color: blue;
+   
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    background-image: url(./asset/pink.avif);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+
+
+#img {
+    max-width: 100%; /* Ensure the image scales down based on the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    margin-top: 20px; 
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 16px;
+    color: black;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    color: blue;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+#name {
+font-family: Brush Script MT, Brush Script Std, cursive;
+font-size: 36px; 
+
+}
+#heading {
+    font-size: Impact, fantasy;
+    font-size: 50px;
+    
+}
+#rec {
+    font-size: 30px;
+    font-family:Impact, fantasy ;
+}
+
+#button{
+    color: black;
+    position: relative;
+    margin-left: -100px;
+    margin-top: 10px;
+    background: transparent;
+}
