@@ -1,0 +1,11 @@
+[2025-01-22 19:48:58,069] 97 werkzeug - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.55.137:5000
+[2025-01-22 19:48:58,070] 97 werkzeug - [33mPress CTRL+C to quit[0m
+[2025-01-22 19:48:58,070] 97 werkzeug -  * Restarting with stat
+[2025-01-22 19:48:58,446] 97 werkzeug -  * Debugger is active!
+[2025-01-22 19:48:58,467] 97 werkzeug -  * Debugger PIN: 139-364-529
+[2025-01-22 19:49:01,755] 97 werkzeug - 127.0.0.1 - - [22/Jan/2025 19:49:01] "GET /predictdata HTTP/1.1" 200 -
+[2025-01-22 19:49:01,781] 97 werkzeug - 127.0.0.1 - - [22/Jan/2025 19:49:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[2025-01-22 19:49:03,919] 97 werkzeug - 127.0.0.1 - - [22/Jan/2025 19:49:03] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
