@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>movie recommendations</title>
+    <title>Movies | Recommendation-Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>movie recommendation system</h1>
-    <form id="movieform">
-        <label for="movieinput">enter the name of the movie:</label>
-        <input type="text" id="movieinput" name="movie" required>
-        <button type="submit">submit</button>
+    <div id="main">
+        <h1 id="heading">Movies Recommender Bot </h1>
+        <form id="movieform">
+        <label for="movieinput">Please Enter The Name of Any Famous Movie Below⬇</label><br>
+        <input type="search" id="movieinput" name="movie" required>
+        <button type="submit">Submit</button>
     </form>
 
     <div id="recommendations" style="margin-top: 20px;">
-        <h2>some movies you should watch are:</h2>
+        <h2>Some  Related Movies That You should watch are:</h2>
         <ul id="movielist"></ul>
-    </div>
+    </div></div>
+<footer >
+    <h3>Developed by: <a href="https://www.linkedin.com/in/oluwaseun-oluwasegun-adeyemi-0b0b3b1b4/">Harshvardhan Prajapati</a></h3>
+    <ul>
+        <li><a href="https://github.com/HarshvardhanPrajapati/Movie-Recommender" target="_blank"><img src="https://imgs.search.brave.com/w5LFW4ei3PC6DUOkw2jcpG1OVDzoYhDqENlECFBWUg8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8y/LzI0L0dpdGh1Yl9s/b2dvX3N2Zy5zdmc" alt="gitimg"></a></li>
+        <li><a href="https://www.linkedin.com/in/harshvardhan-prajapati-343a70319/" target="_blank"><img src="https://imgs.search.brave.com/SQsaFNKXL9x2pacICOrPpnY5c1-Eee1Vf0jOmntInaM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9j/L2NhL0xpbmtlZElu/X2xvZ29faW5pdGlh/bHMucG5n" alt="linkedinimg"></a></li>
+        <li><a href="linkedin" target="_blank"><img src="https://imgs.search.brave.com/mYPxvtv9hm9Uwfheseaj1W5Of9mmJwYk-Pca-nZ39bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RkL2Fm/L2Y1L2RkYWZmNWZi/Zjg5ZWY0Y2M0YTQ3/OGQyYmJmMGQyZGYw/LmpwZw" alt="linkedinimg"></a></li>
+
+    </ul>
+</footer>
 
     <script>
         document.getElementById('movieform').addEventListener('submit', async function(event) {
